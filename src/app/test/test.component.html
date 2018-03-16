@@ -2,3 +2,42 @@
   Wellcome {{name}}
 </div>
 <h2 [ngClass]='messageClasses'>{{name}}</h2>
+<h2 [style.color]="hasError ? 'red' : 'green'">Style Bindings</h2>
+<h2 [style.color]="highlightColor">Style Bindings</h2>
+<h2 [ngStyle]="titleStyles">Style Bindings</h2>
+<button (click)="onClick($event)">Greet</button>
+<button (click)="greeting = 'Welcome Volodymyr'">Greet</button>
+<h2>{{greeting}}</h2>
+<input #myInput type="text">
+<button (click)="logMessage(myInput.value)">Log</button>
+<input [(ngModel)]="someText" type="text">{{someText}}
+
+<ng-container *ngIf="hasError; then thenTemplate; else elseTemplate"></ng-container>
+<ng-template #thenTemplate>
+  <h2 [ngClass]="messageClasses">Visible Text</h2>
+</ng-template>
+<ng-template #elseTemplate>
+  <h2 [ngClass]="messageClasses">Hidden Text</h2>
+</ng-template>
+<button (click)="changeProperty()">Hide/Show</button>
+
+<span [ngSwitch]="color">
+  <p *ngSwitchCase="'blue'">
+    You picked blue!
+  </p>
+  <p *ngSwitchCase="'red'">
+    You picked red!
+  </p>
+  <p *ngSwitchCase="'green'">
+    You picked green!
+  </p>
+  <p *ngSwitchDefault>
+    Please try again.
+  </p>
+</span>
+
+<li *ngFor="let color of colors; index as i; first as f; even as e; odd as o; last as l">{{i+1}} {{f}} {{e}} {{o}} {{l}} {{color}}</li>
+
+<h2>Hello {{lastName}}</h2>
+
+<button (click)="fireEvent()">Fire event</button>

@@ -21,9 +21,12 @@
     "@angular/platform-browser": "^5.2.10",
     "@angular/platform-browser-dynamic": "^5.2.10",
     "@angular/router": "^5.2.10",
+    "boom": "^7.2.0",
     "core-js": "^2.5.5",
+    "hawk": "^7.0.7",
     "hoek": "5.0.3",
     "rxjs": "^5.5.10",
+    "sntp": "^3.0.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
